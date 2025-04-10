@@ -115,20 +115,30 @@ const PlaceDetail_work = ({ route, navigation }) => {
       </View>
 
       <View style={styles.tagsRow}>
-        {[
-          { key: "map", label: "เส้นทาง" },
-          { key: "offerings", label: "ของบูชา" },
-          { key: "mantra", label: "คาถา" },
-        ].map((item, index) => (
-          <TouchableOpacity
-            key={index}
-            style={styles.tagButton}
-            onPress={() => scrollToSection(item.key)}
-          >
-            <Text style={styles.tagText}>{item.label}</Text>
-          </TouchableOpacity>
-        ))}
-      </View>
+  {[
+    { key: "map", label: "เส้นทาง" },
+    { key: "share", label: "แชร์" },
+    { key: "offerings", label: "ของบูชา" },
+    { key: "mantra", label: "คาถา" },
+    { key: "shop", label: "ร้านค้า" } 
+  ].map((item, index) => (
+    <TouchableOpacity
+      key={index}
+      style={styles.tagButton}
+      onPress={() => {
+        if (item.key === "share") {
+          navigation.navigate("SharePage"); // แก้ตรงนี้ไปหน้าต่อไป
+        } else if (item.key === "shop") {
+          navigation.navigate("ShopPage"); // แก้ตรงนี้ไปหน้าต่อไป
+        } else {
+          scrollToSection(item.key);
+        }
+      }}
+    >
+      <Text style={styles.tagText}>{item.label}</Text>
+    </TouchableOpacity>
+  ))}
+</View>
       <View style={styles.metaRow}>
         <View style={styles.imagesSection}>
           <Image source={place.images[0]} style={styles.mainImageLarge} />
@@ -227,6 +237,15 @@ const PlaceDetail_work = ({ route, navigation }) => {
       <View ref={sectionRefs.offerings}>
         <Text style={styles.description}>ของบูชา</Text>
         {place.offerings.map((item, idx) => (
+          <Text key={idx} style={styles.description}>
+            • {item}
+          </Text>
+        ))}
+      </View>
+      <View style={styles.metaRow}></View>
+      <View ref={sectionRefs.howToPray}>
+        <Text style={styles.description}>การไหว้</Text>
+        {place.howToPray.map((item, idx) => (
           <Text key={idx} style={styles.description}>
             • {item}
           </Text>
