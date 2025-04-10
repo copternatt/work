@@ -16,7 +16,7 @@ export const PLACES = [
     pier: "-",
     open: "เปิด 06.00",
     locationNote:
-      "",
+      "-",
     offerings: [
       "ดอกบัวสีชมพู 8 ดอก",
       "ธูปหอม น้ำเปล่า น้ำนม น้ำผลไม้ หรือ นม",
@@ -36,10 +36,10 @@ export const PLACES = [
       "คาถาพระแม่ลักษมีแบบเต็ม: นะโม ตัสสะ ภะคะวะโต อะระหะโต สัมมาสัมพุทธัสสะ (3 จบ) โอม ศรี มหาลักษมี เย นะมะฮา (3 จบ) ...",
     ],
     images: [
-      require("../assets/love/1_1.jpg"),
-      require("../assets/love/1_2.jpg"),
-      require("../assets/love/1_3.jpg"),
-      require("../assets/love/1_4.jpg"),
+      require("../assets/work/1_1.jpg"),
+      require("../assets/work/1_2.jpg"),
+      require("../assets/work/1_3.jpg"),
+      require("../assets/work/1_4.jpg"),
     ],
   },
   {

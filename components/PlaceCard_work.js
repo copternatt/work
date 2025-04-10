@@ -56,7 +56,7 @@ const PlaceCard_work = ({ data }) => {
     };
 
     fetchDistance();
-  }, []);
+  }, [data]);
 
   const handleExplore = () => {
     navigation.navigate('PlaceDetail', { placeId: data.id });
