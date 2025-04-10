@@ -277,7 +277,7 @@ const styles = StyleSheet.create({
     paddingTop: 16,
     paddingBottom: 12,
     borderBottomWidth: 1,
-    borderColor: "red",
+    borderColor: "black",
   },
   metaInfoRow: {
     flexDirection: "row",
